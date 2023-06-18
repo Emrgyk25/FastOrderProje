@@ -11,6 +11,7 @@ import {
 import { TouchableOpacity } from "react-native";
 import { XCircleIcon } from "react-native-heroicons/solid";
 import { urlFor } from "../sanity";
+import { themeColors } from '../theme';
 
 const BasketScreen = () => {
   const navigation = useNavigation();
@@ -34,7 +35,7 @@ const BasketScreen = () => {
   return (
     <SafeAreaView className="flex-1 bg-white">
       <View className="flex-1 bg-gray-100 ">
-        <View className="p-5 border-b border-[#00CCBB] bg-white shadow-xs">
+        <View className="p-5 border-b border-[#dc2626] bg-white shadow-xs">
           <View>
             <Text className="text-lg font-bold text-center">Basket</Text>
             <Text className="text-center text-gray-400">
@@ -46,7 +47,7 @@ const BasketScreen = () => {
             onPress={navigation.goBack}
             className="rounded-full bg-gray-100 absolute top-3 right-5"
           >
-            <XCircleIcon color="#00CCBB" height={50} width={50} />
+            <XCircleIcon color="#dc2626" height={50} width={50} />
           </TouchableOpacity>
         </View>
 
@@ -67,7 +68,7 @@ const BasketScreen = () => {
               key={key}
               className="flex-row items-center space-x-3 bg-white py-2 px-5"
             >
-              <Text className="text-[#00CCBB]">{items.length} x</Text>
+              <Text className="text-[#dc2626]">{items.length} x</Text>
               <Image
                 source={{ uri: urlFor(items[0]?.image).url() }}
                 className="h-12 w-12 rounded-full"
@@ -77,7 +78,8 @@ const BasketScreen = () => {
 
               <TouchableOpacity>
                 <Text
-                  className="text-[#00CCBB] text-xs"
+
+                  className="text-[#dc2626] text-xs"
                   onPress={() => dispatch(removeFromBasket({ id: key }))}
                 >
                   Sil
@@ -104,7 +106,7 @@ const BasketScreen = () => {
           </View>
 
           <TouchableOpacity
-            className="rounded-lg  bg-[#00CCBB] p-4"
+            className="rounded-lg  bg-[#dc2626] p-4"
             onPress={() => navigation.navigate("PreparingOrderScreen")}
           >
             <Text className="text-white text-center text-lg font-bold">

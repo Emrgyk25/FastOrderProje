@@ -11,19 +11,19 @@ import { useSelector } from "react-redux";
 import { selectRestaurant } from "../features/RestaurantSlice";
 import { XMarkIcon } from "react-native-heroicons/solid";
 import * as Progress from "react-native-progress";
-import MapView from "react-native-maps";
+
 
 const DeliveryScreen = () => {
   const navigation = useNavigation();
   const restaurant = useSelector(selectRestaurant);
   return (
-    <View className="bg-[#00CCBB] flex-1">
+    <View className="bg-[#dc2626] flex-1">
       <SafeAreaView className="z-50">
         <View className="flex-row justify-between items-center p-5">
           <TouchableOpacity onPress={() => navigation.navigate("Home")}>
             <XMarkIcon color="white" size={30} />
           </TouchableOpacity>
-          <Text className="font-light text-white text-lg">Order Help</Text>
+          <Text className="font-light text-white text-lg">Yardim</Text>
         </View>
 
         <View className="bg-white mx-5 my-2 rounded-md p-6 z-50 shadow-md">
@@ -40,7 +40,7 @@ const DeliveryScreen = () => {
             />
           </View>
 
-          <Progress.Bar size={30} color="#00CCBB" indeterminate={true} />
+          <Progress.Bar size={30} color="#dc2626" indeterminate={true} />
 
           <Text className="mt-3 text-gray-500">
             Siparisin {restaurant.title} tarafindan hazirlaniyor

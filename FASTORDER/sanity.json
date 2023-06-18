@@ -1,0 +1,33 @@
+{
+  "root": true,
+  "project": {
+    "name": "food-delivery-app"
+  },
+  "api": {
+    "projectId": "pke3jdxd",
+    "dataset": "production"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "scripts": { 
+    "start": "sanity start", 
+    "build": "sanity build" 
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    }
+  ]
+}

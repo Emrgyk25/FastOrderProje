@@ -50,7 +50,7 @@ export default StyleSheet.create({
         marginTop: 10,
     },
     login: {
-        backgroundColor: '#20C3AF',
+        backgroundColor: '#dc2626',
         padding: 20,
         marginLeft: 10,
         marginRight: 10,

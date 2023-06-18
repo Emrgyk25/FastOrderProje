@@ -10,6 +10,7 @@ import {
   removeFromBasket,
   selectBasketItemsWithID,
 } from "../features/BasketSlice";
+import { themeColors } from "../theme";
 
 const DishRow = ({ id, name, description, price, image }) => {
   const [isPressed, setIsPressed] = useState(false);
@@ -29,9 +30,8 @@ const DishRow = ({ id, name, description, price, image }) => {
     <>
       <TouchableOpacity
         onPress={() => setIsPressed(!isPressed)}
-        className={`bg-white border p-4 border-gray-200 ${
-          isPressed && "border-b-0"
-        }`}
+        className={`bg-white border p-4 border-gray-200 ${isPressed && "border-b-0"
+          }`}
       >
         <View className="flex-row">
           <View className="flex-1 pr-2">
@@ -43,7 +43,7 @@ const DishRow = ({ id, name, description, price, image }) => {
             <Image
               style={{
                 borderWidth: 1,
-                borderColor: "#F3F3F4",
+                borderColor: "#dc2626",
               }}
               source={{ uri: urlFor(image).url() }}
               className="h-20 w-20 bg-gray-300 p-4"
@@ -56,19 +56,20 @@ const DishRow = ({ id, name, description, price, image }) => {
         <View className="bg-white px-4">
           <View className="flex-row items-center space-x-2 pb-3">
             <TouchableOpacity
+              className="p-1 rounded-full"
               disabled={!items.length}
               onPress={removeItemFromBasket}
             >
               <MinusCircleIcon
-                size={40}
-                color={items.length > 0 ? "#00CCBB" : "gray"}
+                size={40} stroke="white"
+                color={items.length > 0 ? "#dc2626" : "gray"}
               />
             </TouchableOpacity>
 
             <Text>{items.length}</Text>
 
-            <TouchableOpacity onPress={addItemToBasket}>
-              <PlusCircleIcon size={40} color="#00CCBB" />
+            <TouchableOpacity className="p-1 rounded-full" onPress={addItemToBasket} >
+              <PlusCircleIcon size={40} color="#dc2626" />
             </TouchableOpacity>
           </View>
         </View>
